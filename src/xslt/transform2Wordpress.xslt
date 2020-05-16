@@ -1,6 +1,7 @@
 <xsl:stylesheet version="1.0"
 				xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-				xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+				xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+				xmlns:pkg="http://schemas.microsoft.com/office/2006/xmlPackage">
 	<xsl:strip-space elements="*"/>
 
 	<xsl:template match="node()|@*">
@@ -51,6 +52,10 @@
 	</xsl:template>
 
 	<xsl:template match="w:footnotes">
+		<!-- stop -->
+	</xsl:template>
+
+	<xsl:template match="pkg:part[not(@pkg:name='/word/document.xml')]">
 		<!-- stop -->
 	</xsl:template>
 
